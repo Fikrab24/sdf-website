@@ -171,7 +171,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-5xl font-bold mb-8">
               Why Businesses Choose
-              <span className="text-orange-500"> FikNet Technology</span>
+              <span className="text-orange-500"> SDF Technology</span>
             </h2>
 
             <p className="text-gray-300 leading-8 mb-8">

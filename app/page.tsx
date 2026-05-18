@@ -288,14 +288,9 @@ export default function HomePage() {
             </h2>
 
             <p className="text-gray-300 leading-8 mb-8">
-              SDF Technology is a professional IT company specializing in
-              networking, CCTV installation, technical support, cybersecurity,
-              and modern digital solutions for businesses and organizations.
-            </p>
-             <p className="text-gray-300 leading-8 mb-8">
-              Our mission is to help businesses grow through modern IT
-              infrastructure, security systems, and digital transformation.
-              We focus on quality, trust, speed, and long-term partnerships.
+              SDF Technology delivers expert networking, CCTV security, and complete IT support for homes and businesses. 
+              We install LED screens, maintain computers and printers, and secure factories, hospitals, schools, and offices.
+               Our mission is to drive your growth through fast, trusted, and modern digital infrastructure.
             </p>
 
             <div className="space-y-5">

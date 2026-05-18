@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { motion } from "framer-motion";
 import {
@@ -7,40 +7,70 @@ import {
   Camera,
   MonitorSmartphone,
   Phone,
-  Mail,
+ Mail,
   MapPin,
+  Star,
+  Clock3,
+  Globe,
   ChevronRight,
+  CheckCircle2,
 } from "lucide-react";
+import {
+  FaWhatsapp,
+  FaTelegramPlane,
+  FaTiktok,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 export default function HomePage() {
   return (
-    <main className="bg-black text-white overflow-hidden scroll-smooth">
+    <main className="bg-[#050816] text-white overflow-hidden">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur border-b border-orange-500/20">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-orange-500/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
           <div>
-            <h1 className="text-3xl font-extrabold text-orange-500">
+            <h1 className="text-3xl font-black text-orange-500">
               SDF Technology
             </h1>
+
             <p className="text-xs text-gray-400">
               Smart IT & Security Solutions
             </p>
           </div>
 
-          <div className="hidden md:flex gap-8 text-sm font-semibold">
-            <a href="#home" className="hover:text-orange-400">HOME</a>
-            <a href="#about" className="hover:text-orange-400">ABOUT</a>
-            <a href="#services" className="hover:text-orange-400">SERVICES</a>
-            <a href="#projects" className="hover:text-orange-400">PROJECTS</a>
-            <a href="#contact" className="hover:text-orange-400">CONTACT</a>
+          <div className="hidden lg:flex gap-8 text-sm font-semibold">
+            <a href="#home" className="hover:text-orange-400 transition">
+              Home
+            </a>
+
+            <a href="#about" className="hover:text-orange-400 transition">
+              About
+            </a>
+
+            <a href="#services" className="hover:text-orange-400 transition">
+              Services
+            </a>
+
+            <a href="#portfolio" className="hover:text-orange-400 transition">
+              Portfolio
+            </a>
+
+            <a href="#testimonials" className="hover:text-orange-400 transition">
+              Reviews
+            </a>
+
+            <a href="#contact" className="hover:text-orange-400 transition">
+              Contact
+            </a>
           </div>
 
           <a
             href="#contact"
-            className="hidden md:block border border-orange-500 px-5 py-2 rounded-xl hover:bg-orange-500 transition"
+            className="hidden md:block bg-orange-500 hover:bg-orange-600 px-5 py-3 rounded-xl font-semibold transition"
           >
-            Contact Us
+            Get Consultation
           </a>
         </div>
       </nav>
@@ -48,85 +78,120 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center px-6"
+        className="relative min-h-screen flex items-center overflow-hidden"
       >
 
-        {/* BACKGROUND IMAGE */}
+        {/* BACKGROUND */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage:
-              "url('/office.jpg')",
+            backgroundImage: "url('/office.jpg')",
           }}
         />
 
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-black/80" />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/20" />
 
         {/* ANIMATED GLOW */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-orange-500/20 blur-[120px]" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/20 blur-[120px]" />
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+          }}
+          className="absolute top-20 left-10 w-96 h-96 bg-orange-500/20 rounded-full blur-[120px]"
+        />
 
-        <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+        <motion.div
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -60, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+          }}
+          className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]"
+        />
 
-          {/* LEFT CONTENT */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center pt-32">
+
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <div className="inline-block px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 mb-6">
-              Ethiopia’s Trusted IT & Security Partner
+
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 mb-8">
+              <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping" />
+              Trusted by Businesses Across Ethiopia
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
-              Transform Your Business With
-              <span className="text-orange-500"> Advanced IT Solutions</span>
+            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+
+              Professional
+              <span className="text-orange-500"> IT Solutions </span>
+
+              For Modern Businesses
             </h1>
 
-            <p className="text-gray-300 text-lg leading-8 mb-10 max-w-2xl">
-              SDF Technology delivers enterprise-level CCTV systems,
-              networking infrastructure, remote IT support, cybersecurity,
-              cloud solutions, and smart business technologies designed to help
-              your company grow securely and efficiently.
+            <p className="text-gray-300 text-lg md:text-xl leading-9 mb-10 max-w-2xl">
+              SDF Technology provides enterprise-grade CCTV systems,
+              networking, cybersecurity, remote support, and IT consulting
+              services designed to help businesses grow securely and efficiently.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
+
               <a
                 href="#services"
-                className="bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2"
+                className="bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/30"
               >
-                Get Started
-                <ChevronRight size={20} />
+                Explore Services
               </a>
 
               <a
                 href="#contact"
-                className="border border-white/20 hover:border-orange-500 hover:bg-orange-500/10 transition px-8 py-4 rounded-xl font-semibold"
+                className="border border-white/20 hover:border-orange-500 hover:bg-orange-500/10 transition px-8 py-4 rounded-2xl font-semibold"
               >
-                Request Consultation
+                Contact Experts
               </a>
             </div>
 
-            {/* TRUST BADGES */}
-            <div className="grid grid-cols-3 gap-6 mt-14">
+            {/* STATS */}
+            <div className="grid grid-cols-3 gap-8 mt-16">
+
               <div>
-                <h2 className="text-4xl font-bold text-orange-500">200+</h2>
-                <p className="text-gray-400 text-sm mt-2">
-                  Successful Installations
+                <h2 className="text-4xl font-black text-orange-500">
+                  250+
+                </h2>
+
+                <p className="text-gray-400 mt-2">
+                  Projects Completed
                 </p>
               </div>
 
               <div>
-                <h2 className="text-4xl font-bold text-orange-500">24/7</h2>
-                <p className="text-gray-400 text-sm mt-2">
+                <h2 className="text-4xl font-black text-orange-500">
+                  24/7
+                </h2>
+
+                <p className="text-gray-400 mt-2">
                   Technical Support
                 </p>
               </div>
 
               <div>
-                <h2 className="text-4xl font-bold text-orange-500">99%</h2>
-                <p className="text-gray-400 text-sm mt-2">
+                <h2 className="text-4xl font-black text-orange-500">
+                  99%
+                </h2>
+
+                <p className="text-gray-400 mt-2">
                   Client Satisfaction
                 </p>
               </div>
@@ -135,63 +200,125 @@ export default function HomePage() {
 
           {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="relative hidden lg:block"
           >
+
+            <div className="absolute -inset-5 bg-gradient-to-r from-orange-500/30 to-cyan-500/30 blur-3xl rounded-full" />
+
             <img
               src="/network.jpg"
-              alt="IT Infrastructure"
-              className="rounded-3xl shadow-2xl border border-white/10"
+              alt="IT Solutions"
+              className="relative rounded-[40px] border border-white/10 shadow-2xl"
             />
 
-            <div className="absolute -bottom-6 -left-6 bg-black/80 border border-orange-500/30 backdrop-blur-xl p-6 rounded-2xl">
-              <p className="text-orange-400 font-bold text-xl">
-                Trusted Professional Service
+            {/* FLOAT CARD */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="absolute -bottom-8 -left-8 bg-black/80 backdrop-blur-xl border border-orange-500/30 p-6 rounded-3xl"
+            >
+
+              <h3 className="text-orange-400 text-2xl font-bold">
+                Enterprise-Level Solutions
+              </h3>
+
+              <p className="text-gray-300 mt-2">
+                Secure • Reliable • Scalable
               </p>
-              <p className="text-gray-300 text-sm mt-2">
-                Reliable solutions tailored for modern businesses.
-              </p>
-            </div>
+
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* TRUSTED SECTION */}
+      <section className="py-14 border-y border-white/10 bg-black/40">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <p className="text-center text-gray-400 uppercase tracking-[5px] mb-10">
+            Trusted By Businesses, Offices & Organizations
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+            {[
+              "Factories",
+              "Hotels",
+              "Corporate Offices",
+              "Clincs",
+            ].map((item, index) => (
+
+              <div
+                key={index}
+                className="bg-white/5 border border-white/10 rounded-2xl py-8 font-bold text-xl"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
-      <section id="about" className="py-28 px-6 bg-[#070707]">
+      <section id="about" className="py-28 px-6">
+
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           <img
             src="/cctv.jpg"
             alt="About"
-            className="rounded-3xl border border-white/10"
+            className="rounded-3xl border border-white/10 shadow-2xl"
           />
 
           <div>
+
+            <p className="text-orange-400 font-semibold mb-4">
+              ABOUT OUR COMPANY
+            </p>
+
             <h2 className="text-5xl font-bold mb-8">
-              Why Businesses Choose
-              <span className="text-orange-500"> SDF Technology</span>
+              Reliable Technology Partner For Your Business
             </h2>
 
             <p className="text-gray-300 leading-8 mb-8">
-              We combine modern technology, professional support, and business-focused solutions to help organizations operate securely and efficiently.
+              SDF Technology is a professional IT company specializing in
+              networking, CCTV installation, technical support, cybersecurity,
+              and modern digital solutions for businesses and organizations.
+            </p>
+             <p className="text-gray-300 leading-8 mb-8">
+              Our mission is to help businesses grow through modern IT
+              infrastructure, security systems, and digital transformation.
+              We focus on quality, trust, speed, and long-term partnerships.
             </p>
 
             <div className="space-y-5">
+
               {[
-                "Professional CCTV & surveillance systems",
-                "Enterprise networking infrastructure",
-                "Reliable IT maintenance & support",
-                "Cybersecurity & data protection",
-                "Fast response and trusted expertise",
+                "Professional CCTV surveillance systems",
+                "Enterprise networking & WiFi solutions",
+                "Fast remote and onsite support",
+                "Cybersecurity & infrastructure protection",
+                "Reliable customer service and maintenance",
               ].map((item, index) => (
+
                 <div
                   key={index}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-5"
+                  className="flex items-center gap-4"
                 >
-                  <ShieldCheck className="text-orange-500" />
-                  <span>{item}</span>
+
+                  <CheckCircle2 className="text-orange-500" />
+
+                  <span className="text-gray-300">
+                    {item}
+                  </span>
+
                 </div>
               ))}
             </div>
@@ -200,17 +327,23 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-28 px-6">
+      <section id="services" className="py-28 px-6 bg-[#0b1020]">
+
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-20">
+
+            <p className="text-orange-400 font-semibold mb-4">
+              OUR SERVICES
+            </p>
+
             <h2 className="text-5xl font-bold mb-6">
-              Our Professional Services
+              Professional IT Services
             </h2>
 
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-              Smart technology solutions built to improve security,
-              communication, productivity, and business performance.
+              Smart solutions built to improve productivity,
+              communication, security, and business growth.
             </p>
           </div>
 
@@ -220,29 +353,31 @@ export default function HomePage() {
               {
                 icon: <Camera size={50} />,
                 title: "CCTV Installation",
-                desc: "Professional surveillance systems for homes and businesses.",
+                desc: "Professional HD/IP camera installation with remote monitoring, recording, and smart security solutions.",
               },
               {
                 icon: <Network size={50} />,
                 title: "Networking",
-                desc: "LAN, WiFi, fiber and enterprise network solutions.",
+                desc: "LAN setup, WiFi optimization, structured cabling, MikroTik configuration, and enterprise networking.",
               },
               {
                 icon: <MonitorSmartphone size={50} />,
-                title: "Remote Support",
-                desc: "Quick remote troubleshooting and technical assistance.",
+                title: "IT Support",
+                desc: "Desktop, laptop, printer, and server troubleshooting with fast onsite and remote support.",
               },
               {
                 icon: <ShieldCheck size={50} />,
                 title: "Cyber Security",
-                desc: "Protect your business from modern cyber threats.",
+                desc: "Secure systems against modern digital threats.",
               },
             ].map((service, index) => (
+
               <motion.div
                 whileHover={{ y: -10 }}
                 key={index}
                 className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-orange-500/40 transition"
               >
+
                 <div className="text-orange-500 mb-6">
                   {service.icon}
                 </div>
@@ -254,7 +389,118 @@ export default function HomePage() {
                 <p className="text-gray-400 leading-7">
                   {service.desc}
                 </p>
+
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <section id="portfolio" className="py-28 px-6">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <p className="text-orange-400 font-semibold mb-4">
+              OUR PROJECTS
+            </p>
+
+            <h2 className="text-5xl font-bold mb-6">
+              Recent Work Portfolio
+            </h2>
+
+            <p className="text-gray-400 text-lg">
+              Delivering reliable IT infrastructure and security systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {["/office.jpg", "/network.jpg", "/cctv.jpg"].map(
+              (img, index) => (
+
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  key={index}
+                  className="overflow-hidden rounded-3xl border border-white/10"
+                >
+
+                  <img
+                    src={img}
+                    alt="Project"
+                    className="h-80 w-full object-cover"
+                  />
+
+                </motion.div>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section
+        id="testimonials"
+        className="py-28 px-6 bg-[#0b1020]"
+      >
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <p className="text-orange-400 font-semibold mb-4">
+              CLIENT REVIEWS
+            </p>
+
+            <h2 className="text-5xl font-bold mb-6">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {[
+              {
+                name: "Business Manager",
+                review:
+                  "Excellent CCTV installation and professional support service.",
+              },
+              {
+                name: "Office Administrator",
+                review:
+                  "Their networking solution improved our office productivity significantly.",
+              },
+              {
+                name: "Hotel Owner",
+                review:
+                  "Reliable technical team with fast response and quality work.",
+              },
+            ].map((item, index) => (
+
+              <div
+                key={index}
+                className="bg-white/5 border border-white/10 rounded-3xl p-8"
+              >
+
+                <div className="flex gap-1 text-orange-400 mb-5">
+                  <Star fill="currentColor" />
+                  <Star fill="currentColor" />
+                  <Star fill="currentColor" />
+                  <Star fill="currentColor" />
+                  <Star fill="currentColor" />
+                </div>
+
+                <p className="text-gray-300 leading-8 mb-8">
+                  "{item.review}"
+                </p>
+
+                <h4 className="font-bold text-xl">
+                  {item.name}
+                </h4>
+
+              </div>
             ))}
           </div>
         </div>
@@ -263,34 +509,42 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-28 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-center">
 
-        <h2 className="text-5xl font-extrabold mb-8">
-          Ready To Upgrade Your Business Technology?
+        <h2 className="text-5xl font-black mb-8">
+          Ready To Transform Your Business Technology?
         </h2>
 
         <p className="max-w-3xl mx-auto text-xl mb-10 text-white/90">
-          Partner with SDF Technology and experience trusted professional IT services that improve productivity, security, and customer confidence.
+          Experience secure, reliable, and enterprise-level IT services
+          designed to help your business grow confidently.
         </p>
 
         <a
           href="#contact"
-          className="bg-black text-white px-10 py-5 rounded-2xl font-bold hover:scale-105 transition inline-block"
+          className="bg-black hover:bg-[#111] text-white px-10 py-5 rounded-2xl font-bold transition inline-flex items-center gap-3"
         >
           Start Your Project
+          <ChevronRight />
         </a>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-28 px-6 bg-black">
+      <section id="contact" className="py-28 px-6">
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
 
           <div>
+
+            <p className="text-orange-400 font-semibold mb-4">
+              CONTACT US
+            </p>
+
             <h2 className="text-5xl font-bold mb-8">
-              Contact Our Team
+              Let’s Discuss Your Project
             </h2>
 
             <p className="text-gray-400 text-lg mb-10 leading-8">
-              Need CCTV installation, networking, remote support, or IT consultation? Contact us today and let our experts help your business succeed.
+              Need networking, CCTV installation, IT support,
+              or cybersecurity services? Contact our professional team today.
             </p>
 
             <div className="space-y-6">
@@ -309,42 +563,41 @@ export default function HomePage() {
                 <MapPin className="text-orange-500" />
                 <span>Addis Ababa, Ethiopia</span>
               </div>
+
+              <div className="flex items-center gap-4">
+                <Clock3 className="text-orange-500" />
+                <span>24/7 Support Available</span>
+              </div>
+
+                      {/* SOCIALS */}
+            <div className="flex gap-5 mt-10 text-3xl">
+
+              <a href="#" className="hover:text-cyan-400 transition">
+                <FaWhatsapp />
+              </a>
+
+              <a href="#" className="hover:text-cyan-400 transition">
+                <FaTelegramPlane />
+              </a>
+
+              <a href="#" className="hover:text-cyan-400 transition">
+                <FaLinkedinIn />
+              </a>
+
+              <a href="#" className="hover:text-cyan-400 transition">
+                <FaTiktok />
+              </a>
+
             </div>
 
-            {/* SOCIAL LINKS */}
-            <div className="flex gap-5 mt-10">
-
-              <a
-                href="https://t.me/"
-                target="_blank"
-                className="bg-white/5 border border-white/10 hover:border-orange-500 px-5 py-3 rounded-xl"
-              >
-                Telegram
-              </a>
-
-              <a
-                href="https://tiktok.com/"
-                target="_blank"
-                className="bg-white/5 border border-white/10 hover:border-orange-500 px-5 py-3 rounded-xl"
-              >
-                TikTok
-              </a>
-
-              <a
-                href="https://facebook.com/"
-                target="_blank"
-                className="bg-white/5 border border-white/10 hover:border-orange-500 px-5 py-3 rounded-xl"
-              >
-                Facebook
-              </a>
             </div>
           </div>
 
-          {/* CONTACT FORM */}
+          {/* FORM */}
           <div className="bg-white/5 border border-white/10 rounded-3xl p-10">
 
             <h3 className="text-3xl font-bold mb-8">
-              Send Us A Message
+              Request Consultation
             </h3>
 
             <div className="space-y-5">
@@ -370,13 +623,14 @@ export default function HomePage() {
               <button className="w-full bg-orange-500 hover:bg-orange-600 transition py-4 rounded-xl font-bold text-lg">
                 Send Message
               </button>
+
             </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-8 text-center text-gray-500">
+      <footer className="border-t border-white/10 py-10 text-center text-gray-500">
         © 2026 SDF Technology. All rights reserved.
       </footer>
 
@@ -386,11 +640,13 @@ export default function HomePage() {
         target="_blank"
         className="fixed bottom-6 right-6 bg-green-500 hover:scale-110 transition w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50"
       >
+
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
           alt="WhatsApp"
           className="w-8 h-8"
         />
+
       </a>
     </main>
   );

@@ -7,7 +7,7 @@ import {
   Camera,
   MonitorSmartphone,
   Phone,
- Mail,
+  Mail,
   MapPin,
   Star,
   Clock3,
@@ -29,7 +29,16 @@ export default function HomePage() {
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-orange-500/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+<div className="w-14 h-14 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center overflow-hidden">
 
+              {/* PUT YOUR LOGO HERE */}
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="object-cover w-full h-full"
+              />
+
+            </div>
           <div>
             <h1 className="text-3xl font-black text-orange-500">
               SDF Technology
@@ -272,7 +281,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           <img
-            src="/cctv.jpg"
+            src="/web3.png"
             alt="About"
             className="rounded-3xl border border-white/10 shadow-2xl"
           />
@@ -413,7 +422,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            {["/office.jpg", "/network.jpg", "/cctv.jpg"].map(
+            {["/cctv.png", "/p1.png", "/p2.png"].map(
               (img, index) => (
 
                 <motion.div

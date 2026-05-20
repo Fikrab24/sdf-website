@@ -33,7 +33,7 @@ export default function HomePage() {
 
               {/* PUT YOUR LOGO HERE */}
               <img
-                src="/logo.png"
+                src="/logo12.png"
                 alt="Logo"
                 className="object-cover w-full h-full"
               />
@@ -55,7 +55,7 @@ export default function HomePage() {
             </a>
 
             <a href="#about" className="hover:text-orange-400 transition">
-              About
+                About
             </a>
 
             <a href="#services" className="hover:text-orange-400 transition">

@@ -33,7 +33,7 @@ export default function HomePage() {
 
               {/* PUT YOUR LOGO HERE */}
               <img
-                src="/logo123.png"
+                src="/logo12.png"
                 alt="Logo"
                 className="object-cover w-full h-full"
               />

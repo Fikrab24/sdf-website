@@ -21,8 +21,40 @@ import {
   FaTiktok,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(false);
+
+const sendEmail = async (e: any) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  try {
+    await emailjs.send(
+      "service_iz7z5u8",
+      "template_7wyh2ep",
+      {
+        from_name: e.target.from_name.value,
+        from_email: e.target.from_email.value,
+        title: "New Website Contact",
+        message: e.target.message.value,
+      },
+      "spDWlVRYcE1DV7MrZ"
+    );
+
+    alert("✅ Message sent successfully!");
+    e.target.reset();
+
+  } catch (error) {
+    console.log(error);
+    alert("❌ Failed to send message");
+  }
+
+  setLoading(false);
+};
   return (
     <main className="bg-[#050816] text-white overflow-hidden">
 
@@ -553,6 +585,7 @@ export default function HomePage() {
 
             <div className="space-y-6">
 
+
               <div className="flex items-center gap-4">
                 <Phone className="text-orange-500" />
                 <span>+251 910105376</span>
@@ -575,23 +608,37 @@ export default function HomePage() {
 
                       {/* SOCIALS */}
             <div className="flex gap-5 mt-10 text-3xl">
+<a
+  href="https://wa.me/251910105376"
+  target="_blank"
+  className="hover:text-cyan-400 transition"
+>
+  <FaWhatsapp />
+</a>
 
-              <a href="#" className="hover:text-cyan-400 transition">
-                <FaWhatsapp />
-              </a>
+<a
+  href="https://t.me/fikreab19"
+  target="_blank"
+  className="hover:text-cyan-400 transition"
+>
+  <FaTelegramPlane />
+</a>
 
-              <a href="#" className="hover:text-cyan-400 transition">
-                <FaTelegramPlane />
-              </a>
+<a
+  href="https://linkedin.com/in/YOUR_LINKEDIN"
+  target="_blank"
+  className="hover:text-cyan-400 transition"
+>
+  <FaLinkedinIn />
+</a>
 
-              <a href="#" className="hover:text-cyan-400 transition">
-                <FaLinkedinIn />
-              </a>
-
-              <a href="#" className="hover:text-cyan-400 transition">
-                <FaTiktok />
-              </a>
-
+<a
+  href="https://tiktok.com/@YOUR_TIKTOK"
+  target="_blank"
+  className="hover:text-cyan-400 transition"
+>
+  <FaTiktok />
+</a>
             </div>
 
             </div>
@@ -606,28 +653,41 @@ export default function HomePage() {
 
             <div className="space-y-5">
 
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
-              />
+              <form onSubmit={sendEmail} className="space-y-5">
 
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
-              />
+  <input
+    type="text"
+    name="from_name"
+    placeholder="Your Name"
+    required
+    className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
+  />
 
-              <textarea
-                rows={5}
-                placeholder="Tell us about your project..."
-                className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
-              />
+  <input
+    type="email"
+    name="from_email"
+    placeholder="Your Email"
+    required
+    className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
+  />
 
-              <button className="w-full bg-orange-500 hover:bg-orange-600 transition py-4 rounded-xl font-bold text-lg">
-                Send Message
-              </button>
+  <textarea
+    name="message"
+    rows={5}
+    placeholder="Tell us about your project..."
+    required
+    className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
+  />
 
+  <button
+    type="submit"
+    disabled={loading}
+    className="w-full bg-orange-500 hover:bg-orange-600 transition py-4 rounded-xl font-bold text-lg"
+  >
+    {loading ? "Sending..." : "Send Message"}
+  </button>
+
+</form>
             </div>
           </div>
         </div>

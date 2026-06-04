@@ -26,31 +26,35 @@ import emailjs from "@emailjs/browser";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
-
 const sendEmail = async (e: any) => {
+
   e.preventDefault();
 
   setLoading(true);
 
   try {
+
     await emailjs.send(
-      "service_iz7z5u8",
+      "service_gy6nqct",
       "template_7wyh2ep",
       {
         from_name: e.target.from_name.value,
         from_email: e.target.from_email.value,
-        title: "New Website Contact",
         message: e.target.message.value,
       },
       "spDWlVRYcE1DV7MrZ"
     );
 
-    alert("✅ Message sent successfully!");
+    alert("✅ Message Sent Successfully!");
+
     e.target.reset();
 
   } catch (error) {
+
     console.log(error);
-    alert("❌ Failed to send message");
+
+    alert("❌ Failed To Send Message");
+
   }
 
   setLoading(false);
@@ -652,8 +656,7 @@ const sendEmail = async (e: any) => {
             </h3>
 
             <div className="space-y-5">
-
-              <form onSubmit={sendEmail} className="space-y-5">
+<form onSubmit={sendEmail} className="space-y-5">
 
   <input
     type="text"
@@ -677,7 +680,7 @@ const sendEmail = async (e: any) => {
     placeholder="Tell us about your project..."
     required
     className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
-  />
+  ></textarea>
 
   <button
     type="submit"
